@@ -14,7 +14,7 @@ class AddDishViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     let categories = ["Starters", "Main", "Dessert"]
     var category : String?
-    let model = Model()
+    
     @IBOutlet weak var descTextView: UITextView!
     @IBOutlet weak var categoryTextField: UITextField!
     @IBAction func btnAddDish(_ sender: UIButton) {
@@ -22,7 +22,7 @@ class AddDishViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
            let category = categoryTextField.text,
            let desc = descTextView.text {
             let dish = Dish(title: title, category: category, desc: desc)
-            model.saveDish(dish: dish)
+            Model.shared.saveDish(dish: dish)
         }
         
         
