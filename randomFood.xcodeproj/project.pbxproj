@@ -16,6 +16,8 @@
 		0C9E1FF22BA9BAAD00C420CA /* randomFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E1FF12BA9BAAD00C420CA /* randomFoodTests.swift */; };
 		0C9E1FFC2BA9BAAD00C420CA /* randomFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E1FFB2BA9BAAD00C420CA /* randomFoodUITests.swift */; };
 		0C9E1FFE2BA9BAAD00C420CA /* randomFoodUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E1FFD2BA9BAAD00C420CA /* randomFoodUITestsLaunchTests.swift */; };
+		0C9E200B2BA9C3B100C420CA /* AddDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E200A2BA9C3B100C420CA /* AddDishViewController.swift */; };
+		0C9E200F2BA9D7D400C420CA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E200E2BA9D7D400C420CA /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		0C9E1FF72BA9BAAD00C420CA /* randomFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = randomFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9E1FFB2BA9BAAD00C420CA /* randomFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomFoodUITests.swift; sourceTree = "<group>"; };
 		0C9E1FFD2BA9BAAD00C420CA /* randomFoodUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomFoodUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C9E200A2BA9C3B100C420CA /* AddDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDishViewController.swift; sourceTree = "<group>"; };
+		0C9E200E2BA9D7D400C420CA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				0C9E1FDA2BA9BAAA00C420CA /* AppDelegate.swift */,
+				0C9E200E2BA9D7D400C420CA /* Model.swift */,
+				0C9E200A2BA9C3B100C420CA /* AddDishViewController.swift */,
 				0C9E1FDC2BA9BAAA00C420CA /* SceneDelegate.swift */,
 				0C9E1FDE2BA9BAAA00C420CA /* ViewController.swift */,
 				0C9E1FE02BA9BAAA00C420CA /* Main.storyboard */,
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9E200F2BA9D7D400C420CA /* Model.swift in Sources */,
 				0C9E1FDF2BA9BAAA00C420CA /* ViewController.swift in Sources */,
 				0C9E1FDB2BA9BAAA00C420CA /* AppDelegate.swift in Sources */,
+				0C9E200B2BA9C3B100C420CA /* AddDishViewController.swift in Sources */,
 				0C9E1FDD2BA9BAAA00C420CA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

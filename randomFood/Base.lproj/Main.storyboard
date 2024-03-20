@@ -45,6 +45,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get dish"/>
+                                <connections>
+                                    <action selector="btnGetDish:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7yh-aB-pUc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -58,15 +61,18 @@
                             <constraint firstItem="ud6-1y-1Um" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="zSw-DS-6iY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="P7G-Gh-bSg" kind="modal" id="6rY-Qj-7j2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Dish View Controller-->
         <scene sceneID="pP9-UW-c2R">
             <objects>
-                <viewController id="mGK-s3-dBU" sceneMemberID="viewController">
+                <viewController id="mGK-s3-dBU" customClass="AddDishViewController" customModule="randomFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L7c-pH-GIb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +85,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add dish"/>
+                                <connections>
+                                    <action selector="btnAddDish:" destination="mGK-s3-dBU" eventType="touchUpInside" id="LmU-FZ-7kD"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7HY-a4-hay">
                                 <rect key="frame" x="96.666666666666686" y="80" width="200" height="34"/>
@@ -88,22 +97,72 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textFieldTitle:" destination="cjF-wN-eYq" eventType="editingDidEnd" id="MPw-NX-HKG"/>
+                                </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Categoy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uyB-xS-8i4">
+                                <rect key="frame" x="96.666666666666686" y="144" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="adR-ll-9qG"/>
+                                    <constraint firstAttribute="height" constant="34" id="xXs-bR-bmu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DE9-U0-eze">
+                                <rect key="frame" x="96.666666666666686" y="208" width="200" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="OU4-jB-dqB"/>
+                                    <constraint firstAttribute="width" constant="200" id="UP0-G0-DHc"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="mGK-s3-dBU" id="Fkv-Wz-ibf"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qfm-5S-dt3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7HY-a4-hay" firstAttribute="centerX" secondItem="L7c-pH-GIb" secondAttribute="centerX" id="EyE-K6-hxC"/>
+                            <constraint firstItem="uyB-xS-8i4" firstAttribute="centerX" secondItem="L7c-pH-GIb" secondAttribute="centerX" id="F8o-6I-YpS"/>
                             <constraint firstItem="7HY-a4-hay" firstAttribute="top" secondItem="qfm-5S-dt3" secondAttribute="top" constant="80" id="TBx-jg-VO7"/>
+                            <constraint firstItem="uyB-xS-8i4" firstAttribute="top" secondItem="7HY-a4-hay" secondAttribute="bottom" constant="30" id="X7n-RI-d8r"/>
                             <constraint firstItem="qfm-5S-dt3" firstAttribute="bottom" secondItem="0go-Vu-TEq" secondAttribute="bottom" constant="30" id="cWO-aC-HJl"/>
                             <constraint firstItem="0go-Vu-TEq" firstAttribute="centerX" secondItem="L7c-pH-GIb" secondAttribute="centerX" id="gQh-lq-q2d"/>
+                            <constraint firstItem="DE9-U0-eze" firstAttribute="centerX" secondItem="L7c-pH-GIb" secondAttribute="centerX" id="iyx-RC-BA2"/>
+                            <constraint firstItem="DE9-U0-eze" firstAttribute="top" secondItem="uyB-xS-8i4" secondAttribute="bottom" constant="30" id="nWi-02-A4l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xxf-Lb-WAs"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="uyB-xS-8i4" id="98O-5f-lPQ"/>
+                        <outlet property="descTextView" destination="DE9-U0-eze" id="oT7-nj-Ghl"/>
+                        <outlet property="titleTextField" destination="7HY-a4-hay" id="z06-Fu-gsU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puf-WV-TPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cjF-wN-eYq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="866" y="4"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CdO-ZS-KXa">
+            <objects>
+                <viewController id="P7G-Gh-bSg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qgN-Kt-oER">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="R7Q-Vw-fUM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JBc-g5-pd0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2H-QU-bSM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="4"/>
         </scene>
     </scenes>
     <resources>
