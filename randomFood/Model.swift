@@ -8,11 +8,29 @@
 import Foundation
 
 class Model {
+    static let shared = Model()
     var dishes = [Dish]()
+    init() {
+        var dish = Dish(title: "Fish", category: "Main", desc: "Cooked cod with mashed potatoes")
+        saveDish(dish: dish)
+        dish = Dish(title: "Miso soup", category: "Starters", desc: "A lovley soup with a taste of Japan")
+        saveDish(dish: dish)
+        dish = Dish(title: "Ice cream", category: "Dessert", desc: "Vanilla ice cream with toppings")
+        saveDish(dish: dish)
+    }
+    
     
     
     func saveDish(dish: Dish) {
-        dishes.append(dish)
+        self.dishes.append(dish)
+        
+    }
+    
+    func getRandomDish()-> Dish? {
+        if !self.dishes.isEmpty {
+            return self.dishes.randomElement()!
+        }
+        return nil
     }
     
     
@@ -29,3 +47,4 @@ class Dish {
         self.desc = desc
     }
 }
+

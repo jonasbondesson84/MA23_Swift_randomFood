@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     var segueID = "goToGetDishSegue"
 
     @IBAction func btnGetDish(_ sender: UIButton) {
-        
+        print(Model.shared.dishes.isEmpty)
+        if !Model.shared.dishes.isEmpty {
+            performSegue(withIdentifier: segueID, sender: self)
+        }
     }
     
     override func viewDidLoad() {
